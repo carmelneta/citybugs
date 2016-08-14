@@ -1,23 +1,23 @@
 <md-sidenav-layout>
+
   <md-sidenav #start (open)="mybutton.focus()">
     Start Sidenav.
     <br>
+
+    <a [routerLink]="['/']" (click)="start.close()">Home</a>
+    <a [routerLink]="['/sign-in']" (click)="start.close()">Sign In</a>
+
     <button md-button #mybutton (click)="start.close()">Close</button>
   </md-sidenav>  
   
-
   <md-toolbar color="primary">
+
+    <button md-icon-button (click)="start.open()">
+      <md-icon class="md-24">menu</md-icon>
+    </button>
     <span>My Application Title</span>
   </md-toolbar>
 
+  <router-outlet></router-outlet>
 
-  <h1>{{title}} <md-icon>home</md-icon> </h1>
-
-  <button md-button (click)="start.open()">FLAT</button> 
-  <button md-icon-button>
-    <md-icon class="md-24">favorite</md-icon>
-  </button>
-
-
-  My regular content. This will be moved into the proper DOM at runtime.
 </md-sidenav-layout>
