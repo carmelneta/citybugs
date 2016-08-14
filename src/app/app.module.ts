@@ -4,6 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
+import { MdButtonModule } from '@angular2-material/button';
+import { MdIconModule  } from '@angular2-material/icon';
+import { MdSidenavModule  } from '@angular2-material/sidenav';
+import { MdToolbarModule  } from '@angular2-material/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -11,7 +16,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MdButtonModule,
+    MdIconModule,
+    MdToolbarModule
   ],
   providers: [],
   entryComponents: [AppComponent],
