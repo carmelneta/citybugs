@@ -1,3 +1,20 @@
-<p>
-  sing-in works!
-</p>
+<div class="container">
+  <h1>Log in</h1>
+    <form *ngIf="!isLogedIn" novalidate (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <md-input placeholder="Email" type="email" required  [(ngModel)]="model.email" name="email">
+      </md-input>
+       
+      <md-input placeholder="Password" type="password" required  [(ngModel)]="model.password" name="password">
+      </md-input>
+      
+      <button  type="submit" md-raised-button color="primary">Sing-In</button>
+      <button  type="button" md-raised-button color="accent" (click)="create()">Register</button>
+    </form>
+
+
+    <button *ngIf="isLogedIn" md-raised-button color="warn" (click)="logOut()">LOGOUT</button>
+    
+    <div *ngIf="errorMsg">
+      errors: {{errorMsg}}
+    </div>
+</div>

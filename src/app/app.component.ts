@@ -4,6 +4,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { MdIcon } from '@angular2-material/icon';
 import { MD_SIDENAV_DIRECTIVES  } from '@angular2-material/sidenav';
+
+import { AuthService } from './shared/services/auth.service';
  
 //  MdSidenav
 @Component({
@@ -13,7 +15,8 @@ import { MD_SIDENAV_DIRECTIVES  } from '@angular2-material/sidenav';
   directives : [
     MdIcon,
     MD_SIDENAV_DIRECTIVES
-  ]
+  ],
+  providers : [ AuthService ]
 })
 export class AppComponent {
   title = 'app works!';
@@ -22,10 +25,10 @@ export class AppComponent {
     af: AngularFire
   ){
     
-    this.items = af.database.list('items').subscribe(x => {
-      console.log(x);
-    });
-    console.log( this.items );
+    // this.items = af.database.list('items').subscribe(x => {
+      // console.log(x);
+    // });
+    // console.log( this.items );
     
   }
 }
