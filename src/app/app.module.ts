@@ -22,13 +22,15 @@ import { MdCardModule } from '@angular2-material/card';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 
-//  Component
+//  Components
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { SingInComponent } from './sing-in/sing-in.component';
+import { AddObComponent } from './obs/add-ob/add-ob.component'
 
 //  Reducers
-import { authReducer } from './shared/reducers/auth.reducer'
+import { authReducer } from './shared/reducers/auth.reducer';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCfswrgYqcAVVCwx5WWjwWzko5sMooCgSw",
@@ -46,7 +48,7 @@ const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    SingInComponent, HomeComponent 
+    SingInComponent, HomeComponent, AddObComponent 
   ],
   imports: [
     BrowserModule,
